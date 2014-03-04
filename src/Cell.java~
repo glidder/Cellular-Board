@@ -74,7 +74,7 @@ public class Cell {
         }
         
         if (key == KeyEvent.VK_SPACE) {
-            _state=States.values()[(_state.ordinal()+1)%3];
+            _state=(_state.ordinal()+1)%3;
         }
     }
 

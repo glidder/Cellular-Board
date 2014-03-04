@@ -28,7 +28,7 @@ public class Board extends JPanel implements ActionListener {
 		setBackground(Color.BLACK);
 		setDoubleBuffered(true);
 		
-		cell= new Cell("green");
+		cell= new Cell("g");
 		timer = new Timer(5, this);
         timer.start();
 	}
