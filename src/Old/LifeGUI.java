@@ -125,7 +125,7 @@ class Game extends JPanel implements ActionListener, ComponentListener
         for (int x=0; x<matrix.length-2; ++x) {
             for (int y=0; y<matrix.length-2; ++y) {
                 //if (matrix[x+1][y+1]==1) {
-                g2d.drawImage(ii[matrix[x+1][y+1]].getImage(), x * SCALE, y * SCALE, this);
+                g2d.drawImage(ii[matrix[x+1][y+1]].getImage(), x * SCALE, y * SCALE, SCALE, SCALE, this);
                     //g.fillRect(x * SCALE, y * SCALE, SCALE, SCALE);
                 //}
             }

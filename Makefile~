@@ -1,8 +1,9 @@
 JFLAGS = -g -d
 JC = javac
 BIN=./
+PACK=coraline
 SRC=src/
-CLASSES = $(SRC)Board.java $(SRC)Cell.java $(SRC)Game.java $(SRC)Life.java $(SRC)LifeGUI.java
+CLASSES = $(SRC)Window.java $(SRC)Framework.java $(SRC)Board.java $(SRC)Canvas.java $(SRC)Game.java 
 
 .SUFFIXES: .java .class
 all:
@@ -11,8 +12,8 @@ all:
 #all: classes
 
 run: 
-	java Game $(BIN)Game
+	java $(BIN)$(PACK)Window
 #classes: $(CLASSES:$(SRC)%.java=$(BIN)%.class)
 
 clean:
-		$(RM) $(BIN)*.class
+		$(RM) $(BIN)$(PACK)*.class

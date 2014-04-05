@@ -86,7 +86,22 @@ public class Life
 							auxr+=((boardaux[i+ii][j+jj]==RED)?1:0);
 						}
 				int aux=auxg+auxr;
-				if(aux<2||(aux>3 && boardaux[i][j]!=DEAD))
+				if(aux<2||(aux>4 && boardaux[i][j]!=DEAD))
+					board[i][j]=DEAD;
+				else if (boardaux[i][j]==DEAD && auxg==3 && auxr<3)
+					board[i][j]=ALIVE;
+				else if (boardaux[i][j]==DEAD && auxr==3 && auxg<3)
+					board[i][j]=RED;
+				else if (boardaux[i][j]==RED && auxg>auxr)
+					board[i][j]=DEAD;
+				else if (boardaux[i][j]==ALIVE && auxr>auxg)
+					board[i][j]=DEAD;
+				else
+					board[i][j]=boardaux[i][j];
+				if(board[i][j]!=DEAD)
+					population++;
+				/*==========ORIGINAL CONWAY'S SET OF RULES============
+						if(aux<2||(aux>3 && boardaux[i][j]!=DEAD))
 					board[i][j]=DEAD;
 				else if (boardaux[i][j]==DEAD && auxg==3 && auxr<3)
 					board[i][j]=ALIVE;
@@ -96,6 +111,7 @@ public class Life
 					board[i][j]=boardaux[i][j];
 				if(board[i][j]!=DEAD)
 					population++;
+				=====================================================*/
 			}
 		}
 		generation++;
